@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="LeanAI Technologies: Redefining Product Design & Development with AI-Native Talent. Explore our AI-first PDaaS, solutions, and competitive advantage."
+    />
+    <title>LeanAI Technologies - AI-Native PDaaS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Visualization & Content Choices:
+    - Vision, Problem, Solution, Services, Business Model, GTM Plan, Closing: Presented as styled text sections, cards, and lists using HTML/Tailwind for clarity and readability. Goal: Inform.
+    - Development Timelines (Design Sprint, MVP Build, AI Agent Dev): Horizontal Bar Chart (Chart.js) to visually represent durations (e.g., "1-2 Weeks"). Goal: Inform/Compare. Interaction: Tooltips on hover. Justification: Provides a quick, visual understanding of development speed and efficiency. Library: Chart.js.
+    - Competitive Advantage: Styled HTML table. Goal: Compare. Interaction: None (direct visual comparison). Justification: Standard and effective for presenting direct comparisons clearly. Method: HTML/Tailwind.
+    - Sample Use Cases: Presented as distinct content cards. Goal: Inform with concrete examples. Interaction: None. Justification: Clear separation and highlighting of practical applications. Method: HTML/Tailwind.
+    - CONFIRMING NO SVG/Mermaid. -->
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Inter", sans-serif;
+      }
+      .nav-active {
+        color: #0284c7 !important;
+        font-weight: 600 !important;
+        border-bottom: 2px solid #0284c7;
+      }
+      .chart-container {
+        position: relative;
+        width: 100%;
+        max-width: 700px; /* Adjusted for better readability of horizontal bars */
+        margin-left: auto;
+        margin-right: auto;
+        height: 300px;
+        max-height: 350px;
+      }
+      @media (min-width: 768px) {
+        .chart-container {
+          height: 350px;
+          max-height: 400px;
+        }
+      }
+      .section-title {
+        font-size: 2.25rem; /* text-4xl */
+        font-weight: 700; /* bold */
+        margin-bottom: 1.5rem; /* mb-6 */
+        color: #1f2937; /* text-gray-800 */
+        text-align: center;
+      }
+      .section-intro {
+        font-size: 1.125rem; /* text-lg */
+        color: #4b5563; /* text-gray-600 */
+        margin-bottom: 2rem; /* mb-8 */
+        text-align: center;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .card {
+        background-color: white;
+        border-radius: 0.75rem; /* rounded-xl */
+        padding: 1.5rem; /* p-6 */
+        box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
+          0 4px 6px -2px rgba(0, 0, 0, 0.05); /* shadow-lg */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+      .card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
+          0 10px 10px -5px rgba(0, 0, 0, 0.04); /* shadow-2xl */
+      }
+      .list-item-icon {
+        color: #0ea5e9; /* sky-500 */
+        margin-right: 0.5rem; /* mr-2 */
+      }
+    </style>
+  </head>
+  <body class="bg-stone-100 text-neutral-800">
+    <nav class="bg-white shadow-md sticky top-0 z-50">
+      <div
+        class="container mx-auto px-6 py-3 flex justify-between items-center"
+      >
+        <a href="#home" class="text-2xl font-bold text-sky-600"
+          >LeanAI Technologies</a
+        >
+        <div class="space-x-4">
+          <a
+            href="#home"
+            class="nav-link text-neutral-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium"
+            >Home</a
+          >
+          <a
+            href="#opportunity"
+            class="nav-link text-neutral-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium"
+            >The Opportunity</a
+          >
+          <a
+            href="#howwework"
+            class="nav-link text-neutral-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium"
+            >How We Work</a
+          >
+          <a
+            href="#whyus"
+            class="nav-link text-neutral-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium"
+            >Why Us</a
+          >
+          <a
+            href="#getstarted"
+            class="nav-link text-neutral-600 hover:text-sky-600 px-3 py-2 rounded-md text-sm font-medium"
+            >Get Started</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <section
+      id="home"
+      class="py-16 md:py-24 min-h-screen flex flex-col justify-center items-center text-center bg-gradient-to-br from-sky-50 via-stone-50 to-indigo-50"
+    >
+      <div class="container mx-auto px-6">
+        <h1 class="text-5xl md:text-6xl font-extrabold text-sky-700 mb-4">
+          LeanAI Technologies
+        </h1>
+        <p class="text-2xl md:text-3xl text-neutral-700 mb-8">
+          Redefining Product Design & Development with AI-Native Talent
+        </p>
+        <div class="text-lg text-neutral-600 mb-6">
+          <p>Presented by: [Your Name]</p>
+          <p>Location: India (Tier 2/3 Talent Hubs)</p>
+        </div>
+        <div
+          class="mt-12 p-8 bg-white/70 backdrop-blur-md rounded-xl shadow-xl max-w-3xl mx-auto"
+        >
+          <h2 class="text-3xl font-bold text-neutral-800 mb-4">Our Vision</h2>
+          <p class="text-xl text-neutral-700 leading-relaxed">
+            “Build a world-class
+            <strong class="text-sky-600">AI-native company</strong>” that
+            designs and develops intelligent digital products —
+            <strong class="text-sky-600">fast, lean, and AI-first</strong> —
+            powered by the next generation of AI-native talent.
+          </p>
+        </div>
+        <p class="mt-10 text-neutral-500">
+          Scroll down to explore our approach.
+        </p>
+      </div>
+    </section>
+
+    <section id="opportunity" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title">The Opportunity</h2>
+        <p class="section-intro">
+          This section delves into the current challenges faced in product
+          development and how LeanAI Technologies' AI-native approach offers a
+          transformative solution. Discover the pain points we address and the
+          unique value proposition we bring to the table.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div>
+            <h3
+              class="text-3xl font-semibold text-neutral-700 mb-6 text-center md:text-left"
+            >
+              The Problem
+            </h3>
+            <ul class="space-y-4">
+              <li class="card flex items-start">
+                <span class="list-item-icon text-red-500 text-2xl">⚠️</span>
+                <span class="text-lg text-neutral-600"
+                  >Traditional product development is
+                  <strong class="font-semibold"
+                    >"slow, costly, and siloed."</strong
+                  ></span
+                >
+              </li>
+              <li class="card flex items-start">
+                <span class="list-item-icon text-red-500 text-2xl">⚠️</span>
+                <span class="text-lg text-neutral-600"
+                  >Enterprises struggle with
+                  <strong class="font-semibold">"AI adoption"</strong> beyond
+                  experimentation.</span
+                >
+              </li>
+              <li class="card flex items-start">
+                <span class="list-item-icon text-red-500 text-2xl">⚠️</span>
+                <span class="text-lg text-neutral-600"
+                  >Big tech and IT services firms are
+                  <strong class="font-semibold"
+                    >"slow to transform."</strong
+                  ></span
+                >
+              </li>
+              <li class="card flex items-start">
+                <span class="list-item-icon text-red-500 text-2xl">⚠️</span>
+                <span class="text-lg text-neutral-600"
+                  >Most startups lack
+                  <strong class="font-semibold"
+                    >"in-house GenAI product design capability."</strong
+                  ></span
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h3
+              class="text-3xl font-semibold text-neutral-700 mb-6 text-center md:text-left"
+            >
+              Our Solution
+            </h3>
+            <div class="card p-8 bg-sky-50 border border-sky-200">
+              <p class="text-lg text-sky-800 mb-6">
+                A boutique
+                <strong class="font-semibold">AI-native studio</strong>
+                delivering AI-first digital product design & development as a
+                service (PDaaS).
+              </p>
+              <ul class="space-y-3 text-sky-700">
+                <li class="flex items-center">
+                  <span class="list-item-icon text-sky-600">✅</span>
+                  Human-centered design meets GenAI workflows.
+                </li>
+                <li class="flex items-center">
+                  <span class="list-item-icon text-sky-600">✅</span> Small
+                  teams, fast cycles, high-fidelity prototypes.
+                </li>
+                <li class="flex items-center">
+                  <span class="list-item-icon text-sky-600">✅</span> Full-stack
+                  delivery: UX, Frontend, Backend, AI agent integration.
+                </li>
+                <li class="flex items-center font-semibold">
+                  <span class="list-item-icon text-sky-600">⏱️</span> MVP in 3–6
+                  weeks, AI agents in 2–4 weeks.
+                </li>
+              </ul>
+            </div>
+            <div class="mt-8">
+              <h4
+                class="text-xl font-semibold text-neutral-700 mb-3 text-center md:text-left"
+              >
+                Typical Development Timelines
+              </h4>
+              <div class="chart-container bg-gray-50 p-4 rounded-lg shadow">
+                <canvas id="timelinesChart"></canvas>
+              </div>
+              <p class="text-sm text-gray-500 mt-2 text-center">
+                Illustrative timelines for key development phases. Exact
+                duration depends on project complexity.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="howwework" class="py-16 md:py-24 bg-stone-50">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title">How We Work</h2>
+        <p class="section-intro">
+          Explore our comprehensive service offerings, see real-world examples
+          of how our AI agents create value, and understand our structured
+          approach to delivering intelligent solutions.
+        </p>
+
+        <h3 class="text-3xl font-semibold text-neutral-700 mb-8 text-center">
+          Services Offered
+        </h3>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+          {[ { title: "Design Thinking Workshops", description: "Define user
+          needs, pain points, and AI opportunities.", icon: "💡" }, { title:
+          "Product Ideation & Prototyping", description: "Fast mockups, UX
+          flows, working demos.", icon: "🚀" }, { title: "Custom GPT Agent
+          Design", description: "Fine-tuned prompts, RAG pipelines, API
+          orchestration.", icon: "🤖" }, { title: "Full Stack Delivery",
+          description: "React frontends, Node/Go/Python backends, AWS/GCP
+          infra.", icon: "💻" }, { title: "Ongoing Support & Training",
+          description: "Post-launch agent updates, dashboards, LLMOps.", icon:
+          "🛠️" } ].map(service => `
+          <div class="card text-center">
+            <span class="text-4xl mb-3 inline-block">${service.icon}</span>
+            <h4 class="text-xl font-semibold text-sky-600 mb-2">
+              ${service.title}
+            </h4>
+            <p class="text-neutral-600 text-sm">${service.description}</p>
+          </div>
+          `).join('')}
+        </div>
+
+        <h3 class="text-3xl font-semibold text-neutral-700 mb-8 text-center">
+          Sample Use Cases
+        </h3>
+        <div class="grid md:grid-cols-2 gap-8">
+          <div
+            class="card bg-gradient-to-br from-teal-50 to-cyan-50 border border-teal-200"
+          >
+            <h4 class="text-2xl font-semibold text-teal-700 mb-3">
+              Swiggy - Customer Delight Agent
+            </h4>
+            <ul class="space-y-2 text-teal-600">
+              <li class="flex items-start">
+                <span class="list-item-icon text-teal-500 mt-1"> müşteri</span
+                >Proactively offers refunds, ETA updates, and re-orders using
+                GPT + live APIs.
+              </li>
+              <li class="flex items-start">
+                <span class="list-item-icon text-teal-500 mt-1">🛠️</span>Built
+                with empathetic NLU, CRM integration, live chat + voice.
+              </li>
+            </ul>
+          </div>
+          <div
+            class="card bg-gradient-to-br from-purple-50 to-pink-50 border border-purple-200"
+          >
+            <h4 class="text-2xl font-semibold text-purple-700 mb-3">
+              Private Bank - Relationship Manager Agent
+            </h4>
+            <ul class="space-y-2 text-purple-600">
+              <li class="flex items-start">
+                <span class="list-item-icon text-purple-500 mt-1">📈</span
+                >Personalized investment prompts based on user behavior.
+              </li>
+              <li class="flex items-start">
+                <span class="list-item-icon text-purple-500 mt-1">📄</span>AI
+                summarization of user portfolios, market trends, and RM scripts.
+              </li>
+              <li class="flex items-start">
+                <span class="list-item-icon text-purple-500 mt-1">📱</span
+                >Omni-channel: WhatsApp, email, app widget.
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="whyus" class="py-16 md:py-24 bg-white">
+      <div class="container mx-auto px-6">
+        <h2 class="section-title">Why Us?</h2>
+        <p class="section-intro">
+          Understand what sets LeanAI Technologies apart from traditional
+          agencies and learn about our transparent and flexible engagement
+          models designed for your success.
+        </p>
+
+        <h3 class="text-3xl font-semibold text-neutral-700 mb-8 text-center">
+          Competitive Advantage
+        </h3>
+        <div class="overflow-x-auto shadow-lg rounded-xl mb-16">
+          <table class="w-full min-w-max text-left">
+            <thead class="bg-sky-600 text-white">
+              <tr>
+                <th class="p-4 font-semibold text-lg">Traditional Agencies</th>
+                <th class="p-4 font-semibold text-lg">
+                  Our Studio (LeanAI Technologies)
+                </th>
+              </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-stone-200">
+              <tr class="hover:bg-stone-50 transition-colors">
+                <td class="p-4 text-neutral-600">
+                  Design and Dev teams are siloed
+                </td>
+                <td class="p-4 text-sky-700 font-medium">
+                  Integrated AI-first design-dev pods
+                </td>
+              </tr>
+              <tr class="hover:bg-stone-50 transition-colors">
+                <td class="p-4 text-neutral-600">
+                  No in-house AI agent capability
+                </td>
+                <td class="p-4 text-sky-700 font-medium">
+                  Prebuilt templates, pipelines, and IP
+                </td>
+              </tr>
+              <tr class="hover:bg-stone-50 transition-colors">
+                <td class="p-4 text-neutral-600">Long feedback loops</td>
+                <td class="p-4 text-sky-700 font-medium">
+                  Rapid iterations, co-create with client
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <h3 class="text-3xl font-semibold text-neutral-700 mb-8 text-center">
+          Business Model
+        </h3>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="card text-center border-t-4 border-sky-500">
+            <h4 class="text-xl font-semibold text-sky-700 mb-2">Flat Fee</h4>
+            <p class="text-neutral-600">For Design Sprint (1–2 weeks)</p>
+          </div>
+          <div class="card text-center border-t-4 border-sky-500">
+            <h4 class="text-xl font-semibold text-sky-700 mb-2">
+              Milestone-Based Pricing
+            </h4>
+            <p class="text-neutral-600">For MVP Build (2–6 weeks)</p>
+          </div>
+          <div class="card text-center border-t-4 border-sky-500">
+            <h4 class="text-xl font-semibold text-sky-700 mb-2">Retainers</h4>
+            <p class="text-neutral-600">
+              For Agent Monitoring, Tuning, and UX Enhancements
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="getstarted" class="py-16 md:py-24 bg-sky-700 text-white">
+      <div class="container mx-auto px-6 text-center">
+        <h2 class="text-4xl font-bold mb-6">Ready to Design Intelligence?</h2>
+        <p class="text-xl text-sky-100 mb-10 max-w-3xl mx-auto">
+          Learn about our go-to-market strategy and our core philosophy. Let's
+          collaborate to craft AI-native digital products that truly serve,
+          understand, and delight users.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div class="bg-white/10 p-8 rounded-xl text-left">
+            <h3 class="text-2xl font-semibold mb-4">Go-to-Market Plan</h3>
+            <ul class="space-y-3 text-sky-50">
+              <li class="flex items-start">
+                <span class="list-item-icon text-sky-300 mt-1">🎯</span>Direct
+                outreach to CXOs of Fintech, E-commerce, Healthcare, and
+                Logistics.
+              </li>
+              <li class="flex items-start">
+                <span class="list-item-icon text-sky-300 mt-1">🤝</span
+                >Partnerships with VC portfolios and AI accelerators.
+              </li>
+              <li class="flex items-start">
+                <span class="list-item-icon text-sky-300 mt-1">🌟</span>Showcase
+                case studies on AI-native agent design.
+              </li>
+            </ul>
+          </div>
+          <div class="p-8">
+            <h3 class="text-3xl font-bold mb-4">We are not building code.</h3>
+            <p class="text-4xl font-extrabold text-sky-200 mb-6">
+              We are "designing intelligence".
+            </p>
+            <p class="text-lg text-sky-100">
+              Join us in crafting AI-native digital products that serve,
+              understand, and delight users.
+            </p>
+            <button
+              class="mt-8 bg-white text-sky-700 font-semibold py-3 px-8 rounded-lg shadow-md hover:bg-sky-50 transition-colors text-lg"
+            >
+              Let's Connect
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-neutral-800 text-neutral-300 text-center py-8">
+      <p>
+        &copy; ${new Date().getFullYear()} LeanAI Technologies. All rights
+        reserved.
+      </p>
+      <p>Crafting the future of intelligent products from India.</p>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Timeline Chart
+        const timelinesCtx = document.getElementById("timelinesChart");
+        if (timelinesCtx) {
+          new Chart(timelinesCtx, {
+            type: "bar", // Changed to 'bar' for vertical bars, or 'horizontalBar' if Chart.js version supports it directly
+            data: {
+              labels: ["Design Sprint", "MVP Build", "AI Agent Dev"],
+              datasets: [
+                {
+                  label: "Max Weeks",
+                  data: [2, 6, 4], // Max weeks: Design Sprint (1-2), MVP (2-6 or 3-6), AI Agents (2-4)
+                  backgroundColor: [
+                    "rgba(56, 189, 248, 0.6)", // sky-400
+                    "rgba(14, 165, 233, 0.6)", // sky-500
+                    "rgba(2, 132, 199, 0.6)", // sky-600
+                  ],
+                  borderColor: [
+                    "rgba(56, 189, 248, 1)",
+                    "rgba(14, 165, 233, 1)",
+                    "rgba(2, 132, 199, 1)",
+                  ],
+                  borderWidth: 1,
+                },
+              ],
+            },
+            options: {
+              indexAxis: "y", // This makes the bar chart horizontal
+              responsive: true,
+              maintainAspectRatio: false,
+              scales: {
+                x: {
+                  beginAtZero: true,
+                  title: {
+                    display: true,
+                    text: "Weeks",
+                  },
+                },
+                y: {
+                  ticks: {
+                    callback: function (value, index, values) {
+                      const labelsFull = [
+                        "Design Sprint (1-2 Weeks)",
+                        "MVP Build (3-6 Weeks)",
+                        "AI Agent Dev (2-4 Weeks)",
+                      ];
+                      return labelsFull[index];
+                    },
+                  },
+                },
+              },
+              plugins: {
+                legend: {
+                  display: false, // Hiding legend as it's a single dataset
+                },
+                tooltip: {
+                  callbacks: {
+                    label: function (context) {
+                      let label = context.dataset.label || "";
+                      if (label) {
+                        label += ": ";
+                      }
+                      const timelineData = {
+                        "Design Sprint": "1-2 Weeks",
+                        "MVP Build": "3-6 Weeks", // Using 3-6 from Solution slide
+                        "AI Agent Dev": "2-4 Weeks",
+                      };
+                      label +=
+                        timelineData[context.label] ||
+                        context.parsed.x + " Weeks (Max)";
+                      return label;
+                    },
+                    title: function (tooltipItems) {
+                      // To ensure the title in tooltip shows the full label
+                      const labelsFull = [
+                        "Design Sprint (1-2 Weeks)",
+                        "MVP Build (3-6 Weeks)",
+                        "AI Agent Dev (2-4 Weeks)",
+                      ];
+                      return labelsFull[tooltipItems[0].dataIndex];
+                    },
+                  },
+                },
+              },
+            },
+          });
+        }
+
+        // Nav highlighting on scroll
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav a.nav-link");
+
+        window.addEventListener("scroll", () => {
+          let current = "";
+          sections.forEach((section) => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.clientHeight;
+            if (pageYOffset >= sectionTop - sectionHeight / 3) {
+              current = section.getAttribute("id");
+            }
+          });
+
+          navLinks.forEach((link) => {
+            link.classList.remove("nav-active");
+            if (link.getAttribute("href").substring(1) === current) {
+              link.classList.add("nav-active");
+            }
+          });
+          // Ensure first link is active if at top
+          if (pageYOffset < sections[0].offsetTop) {
+            navLinks.forEach((link) => link.classList.remove("nav-active"));
+            document
+              .querySelector('nav a.nav-link[href="#home"]')
+              .classList.add("nav-active");
+          }
+        });
+        // Set initial active link
+        const initialHash = window.location.hash || "#home";
+        const initialActiveLink = document.querySelector(
+          `nav a.nav-link[href="${initialHash}"]`
+        );
+        if (initialActiveLink) {
+          navLinks.forEach((link) => link.classList.remove("nav-active"));
+          initialActiveLink.classList.add("nav-active");
+        } else {
+          document
+            .querySelector('nav a.nav-link[href="#home"]')
+            .classList.add("nav-active");
+        }
+
+        // Dynamic content for services (already inlined for simplicity, but could be JS)
+        // Example: document.getElementById('services-grid').innerHTML = services.map(...).join('');
+        // For footer year
+        // Handled by template literal in HTML directly for simplicity
+      });
+    </script>
+  </body>
+</html>
